@@ -34,7 +34,7 @@ class AnexoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Anexo::create($request->all());
     }
 
     /**
@@ -82,6 +82,7 @@ class AnexoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Anexo::find($id)->delete();
+        return 204;
     }
 }
